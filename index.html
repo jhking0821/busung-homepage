@@ -56,17 +56,36 @@
     <script type="application/ld+json">
 
     {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-
-    "name":"BUSUNG F&B",
-
-    "url":"https://busungfnb.co.kr",
-
-    "logo":"https://busungfnb.co.kr/logo.png",
-
-    "sameAs":[]
-
+    "@context": "https://schema.org",
+    "@graph": 
+    [
+        {
+        "@type": "Organization",
+        "@id": "https://busungfnb.co.kr/#organization",
+        "name": "BUSUNG F&B",
+        "alternateName": "부성에프앤비",
+        "url": "https://busungfnb.co.kr",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://busungfnb.co.kr/images/logo.png"
+        }
+        },
+        {
+        "@type": "WebSite",
+        "@id": "https://busungfnb.co.kr/#website",
+        "url": "https://busungfnb.co.kr",
+        "name": "BUSUNG F&B",
+        "alternateName": "부성에프앤비",
+        "publisher": {
+            "@id": "https://busungfnb.co.kr/#organization"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://busungfnb.co.kr/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+        }
+    ]
     }
 
     </script>
