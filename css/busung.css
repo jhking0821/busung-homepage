@@ -94,7 +94,7 @@ HEADER
 
 .logo img{
 
-    height:88px;
+    height:77px;
 
     display:block;
 
@@ -1501,6 +1501,34 @@ CONTACT V3
 .contact .btn-outline-white{
 
     min-width:240px;
+
+}
+
+.btn-kakao{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    min-width:240px;
+
+    border-radius:60px;
+
+    background:#FEE500;
+
+    color:#3C1E1E;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.btn-kakao:hover{
+
+    background:#FFD400;
+
+    transform:translateY(-2px);
 
 }
 
