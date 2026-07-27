@@ -632,7 +632,7 @@ Hero Floating Card
 
     position:relative;
 
-    height:180px;
+    height:240px;
 
 }
 
@@ -686,11 +686,19 @@ Hero Floating Card
 
 .why-content{
 
-    position:relative;
+    position:absolute;
 
-    padding:70px 25px 35px;
+    top:25px;
+
+    left:0;
+
+    width:100%;
+
+    z-index:5;
 
     text-align:center;
+
+    padding:0 25px;
 
 }
 
