@@ -94,7 +94,7 @@ HEADER
 
 .logo img{
 
-    height:66px;
+    height:60px;
 
     display:block;
 
@@ -1795,7 +1795,7 @@ FOOTER
 .container{width:92%;max-width:100%;}
 .header{height:72px}
 .header-wrap{height:72px}
-.logo img{height:90px}
+.logo img{height:60px}
 .nav{display:none}
 .btn-estimate{margin-left:0;padding:12px 22px;font-size:14px}
 .hero{min-height:100svh;height:auto;padding:110px 0 70px}
@@ -1835,7 +1835,7 @@ body{overflow-x:hidden}
 .footer{padding-top:60px}
 }
 @media (max-width:480px){
-.logo img{height:72px}
+.logo img{height:60px}
 .btn-estimate{padding:10px 18px;font-size:13px}
 .hero{padding-top:90px}
 .hero h1{font-size:30px}
