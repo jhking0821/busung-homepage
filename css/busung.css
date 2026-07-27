@@ -2575,3 +2575,46 @@ padding-bottom:70px;
 }
 
 }
+
+
+/* ================= MOBILE V5 PATCH ================= */
+@media (max-width:768px){
+.hero{min-height:auto!important;height:auto!important;padding:96px 0 48px!important;}
+.hero-content{max-width:100%!important;text-align:center!important;}
+.hero h1{font-size:32px!important;line-height:1.25!important;margin-bottom:18px!important;}
+.hero p{font-size:15px!important;line-height:1.7!important;margin-bottom:24px!important;}
+.hero-floating{position:static!important;width:100%!important;margin-top:28px!important;padding:22px!important;}
+.hero-btns{flex-direction:column!important;gap:12px!important}
+.hero-btns a{width:100%!important}
+
+#why,.certifications,.product,.process,.client,.factory,.contact{padding:60px 0!important}
+.section-title{margin-bottom:28px!important}
+.section-title h2{font-size:28px!important}
+.section-title p{font-size:15px!important;line-height:1.7!important}
+
+.why-grid,.product-grid,.process-wrap,.client-grid,.haccp-grid,.global-grid,.factory-grid{
+display:flex!important;
+overflow-x:auto!important;
+gap:16px!important;
+scroll-snap-type:x mandatory;
+padding-bottom:10px;
+-webkit-overflow-scrolling:touch;
+}
+.why-grid::-webkit-scrollbar,.product-grid::-webkit-scrollbar,.process-wrap::-webkit-scrollbar,.client-grid::-webkit-scrollbar,.haccp-grid::-webkit-scrollbar,.global-grid::-webkit-scrollbar,.factory-grid::-webkit-scrollbar{display:none}
+.why-card{flex:0 0 86%!important;height:250px!important;scroll-snap-align:start}
+.product-card{flex:0 0 82%!important;scroll-snap-align:start}
+.process-card{flex:0 0 82%!important;scroll-snap-align:start;padding:28px 20px!important}
+.client-card{flex:0 0 70%!important;scroll-snap-align:start}
+.cert-card{flex:0 0 180px!important;scroll-snap-align:start}
+.factory-card{flex:0 0 82%!important;scroll-snap-align:start}
+.process-line{display:none!important}
+
+.product-card img{height:180px!important}
+.factory-main{min-height:260px!important}
+.factory-overlay{padding:22px!important}
+.factory-overlay h3{font-size:28px!important}
+.factory-card img{height:170px!important}
+.contact-wrap,.footer-wrap{display:block!important}
+.contact-item{margin-bottom:16px!important}
+.footer-wrap>div{margin-bottom:24px!important}
+}
