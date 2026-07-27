@@ -2079,37 +2079,67 @@ margin-bottom:40px;
 /* ================= HERO ================= */
 
 .hero{
-    min-height:620px;
-    padding-top:120px;
-    padding-bottom:70px;
+
+min-height:680px;
+
+padding-top:110px;
+
+padding-bottom:60px;
+
+display:flex;
+align-items:flex-start;
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:10;
+
+}
+
+.hero-label{
+
+font-size:13px;
+
+letter-spacing:5px;
+
+margin-bottom:18px;
+
 }
 
 .hero h1{
 
 font-size:2rem;
+
 line-height:1.18;
+
 letter-spacing:-1px;
-margin-top:20px;
-margin-bottom:24px;
+
+margin-bottom:22px;
 
 }
 
 .hero p{
 
-font-size:17px;
+font-size:16px;
+
 line-height:1.7;
 
-color:rgba(255,255,255,.82);
-
-max-width:100%;
-
-margin-bottom:34px;
+margin-bottom:30px;
 
 }
 
 .hero-btns{
 
+display:flex;
+
+flex-direction:column;
+
 gap:14px;
+
+margin-bottom:0;
 
 }
 
@@ -2119,34 +2149,17 @@ height:58px;
 
 font-size:18px;
 
-border-radius:999px;
-
-}
-
-.hero-label{
-
-font-size:14px;
-letter-spacing:4px;
-font-weight:700;
-
 }
 
 .hero-floating{
-    display:none !important;
-}
+
+display:none!important;
 
 }
 
 .hero-scroll{
 
-bottom:24px;
-
-}
-
-.hero-scroll span{
-
-font-size:12px;
-letter-spacing:6px;
+bottom:25px;
 
 }
 
@@ -2155,12 +2168,12 @@ letter-spacing:6px;
 .why-grid{
 
 display:flex;
+
 overflow-x:auto;
-gap:20px;
 
-padding-bottom:20px;
+gap:16px;
 
-scroll-snap-type:x mandatory;
+padding:0 16px 18px;
 
 }
 
@@ -2170,13 +2183,9 @@ display:none;
 
 .why-card{
 
-flex:0 0 300px;
+flex:0 0 84%;
 
-height:240px;
-
-border-radius:28px;
-
-scroll-snap-align:start;
+min-height:230px;
 
 }
 
@@ -2249,15 +2258,9 @@ scroll-snap-align:start;
 
 .product-grid{
 
-display:flex!important;
+padding:0 16px 18px;
 
-overflow-x:auto;
-
-gap:20px;
-
-padding-bottom:20px;
-
-scroll-snap-type:x mandatory;
+gap:16px;
 
 }
 
@@ -2269,15 +2272,7 @@ display:none;
 
 .product-card{
 
-flex:0 0 290px;
-
-border-radius:30px;
-
-padding:0;
-
-overflow:hidden;
-
-scroll-snap-align:start;
+flex:0 0 84%;
 
 }
 
@@ -2449,7 +2444,7 @@ display:none;
 
 }
 
-.factory-item{
+.factory-card{
 
 flex:0 0 320px;
 
@@ -2457,7 +2452,7 @@ scroll-snap-align:start;
 
 }
 
-.factory-item img{
+.factory-card img{
 
 height:220px;
 
@@ -2465,7 +2460,7 @@ object-fit:cover;
 
 }
 
-.factory-item h3{
+.factory-card h3{
 
 font-size:28px;
 
@@ -2487,9 +2482,7 @@ gap:18px;
 
 .contact-item{
 
-padding:30px;
-
-min-height:auto;
+padding:26px;
 
 }
 
@@ -2521,7 +2514,7 @@ line-height:1.8;
 
 .footer{
 
-padding-top:70px;
+padding-top:50px;
 
 }
 
@@ -2531,11 +2524,12 @@ font-size:38px;
 
 }
 
+}
 
 /* =========================
    MOBILE V2 OVERRIDE
 ========================= */
-@media (max-width:991px){
+/* @media (max-width:991px){
 
 html,body{overflow-x:hidden;}
 
@@ -2630,11 +2624,11 @@ padding-top:70px;
 padding-bottom:70px;
 }
 
-}
+} */
 
 
 /* ===== MOBILE HOTFIX V6 ===== */
-@media (max-width:768px){
+/* @media (max-width:768px){
 html,body{overflow-x:hidden!important;width:100%!important;max-width:100%!important;}
 *{box-sizing:border-box;}
 body *{max-width:100%;}
@@ -2653,4 +2647,4 @@ img,video{max-width:100%;height:auto;}
 footer .inner,footer .container{
 display:block!important;
 }
-}
+} */
