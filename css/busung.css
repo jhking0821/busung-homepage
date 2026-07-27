@@ -2079,41 +2079,74 @@ margin-bottom:40px;
 /* ================= HERO ================= */
 
 .hero{
-
-padding-top:110px;
-padding-bottom:70px;
-min-height:auto;
-
+    min-height:620px;
+    padding-top:120px;
+    padding-bottom:70px;
 }
 
 .hero h1{
 
-font-size:46px;
-line-height:1.2;
+font-size:2rem;
+line-height:1.18;
+letter-spacing:-1px;
+margin-top:20px;
+margin-bottom:24px;
 
 }
 
 .hero p{
 
-font-size:18px;
+font-size:17px;
 line-height:1.7;
-margin:30px 0;
+
+color:rgba(255,255,255,.82);
+
+max-width:100%;
+
+margin-bottom:34px;
 
 }
 
 .hero-btns{
 
-display:flex;
-flex-direction:column;
-gap:15px;
+gap:14px;
 
 }
 
 .hero-btns a{
 
-width:100%;
 height:58px;
+
 font-size:18px;
+
+border-radius:999px;
+
+}
+
+.hero-label{
+
+font-size:14px;
+letter-spacing:4px;
+font-weight:700;
+
+}
+
+.hero-floating{
+    display:none !important;
+}
+
+}
+
+.hero-scroll{
+
+bottom:24px;
+
+}
+
+.hero-scroll span{
+
+font-size:12px;
+letter-spacing:6px;
 
 }
 
@@ -2503,19 +2536,19 @@ font-size:38px;
 /* =========================
    MOBILE V2 OVERRIDE
 ========================= */
-@media (max-width:991px){
+/* @media (max-width:991px){
 
 html,body{overflow-x:hidden;}
 
-.hero{min-height:760px;}
+.hero{
+    min-height:620px;
+    padding-top:120px;
+    padding-bottom:70px;
+}
+
 .hero h1{
     font-size:1.69rem;
     line-height:1.15;
-}
-
-.hero{
-    min-height:auto;
-    padding-bottom:40px;
 }
 
 .hero-content{
@@ -2524,18 +2557,7 @@ html,body{overflow-x:hidden;}
 }
 
 .hero-floating{
-    position:relative !important;
-    left:auto !important;
-    right:auto !important;
-    top:auto !important;
-    bottom:auto !important;
-
-    width:100%;
-    max-width:340px;
-
-    margin:30px auto 0;
-
-    transform:none !important;
+    display:none !important;
 }
 
 .hero-buttons{
@@ -2609,11 +2631,11 @@ padding-top:70px;
 padding-bottom:70px;
 }
 
-}
+} */
 
 
 /* ===== MOBILE HOTFIX V6 ===== */
-@media (max-width:768px){
+/* @media (max-width:768px){
 html,body{overflow-x:hidden!important;width:100%!important;max-width:100%!important;}
 *{box-sizing:border-box;}
 body *{max-width:100%;}
@@ -2632,4 +2654,4 @@ img,video{max-width:100%;height:auto;}
 footer .inner,footer .container{
 display:block!important;
 }
-}
+} */
