@@ -121,7 +121,7 @@ lucide.createIcons();
 
         </a>
 
-        <nav class="nav">
+        <nav class="nav" id="nav">
 
             <ul>
 
@@ -141,15 +141,27 @@ lucide.createIcons();
 
         </nav>
 
-        <a href="#contact" class="btn-estimate">
+        <div class="header-actions">
 
-            견적문의
+            <a href="#contact" class="btn-estimate">
 
-        </a>
+                견적문의
+
+            </a>
+
+            <button type="button" class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-controls="nav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
 
     </div>
 
 </header>
+
+<div class="nav-overlay" id="navOverlay"></div>
 
 <section class="hero" id="hero">
 
@@ -1206,6 +1218,54 @@ lucide.createIcons();
 
 <script src="js/process.js"></script>
 <script src="js/kpi.js"></script>
+
+<script>
+(function(){
+    const navToggle = document.getElementById('navToggle');
+    const nav = document.getElementById('nav');
+    const navOverlay = document.getElementById('navOverlay');
+
+    if(!navToggle || !nav || !navOverlay) return;
+
+    function openNav(){
+        nav.classList.add('is-open');
+        navOverlay.classList.add('is-open');
+        navToggle.classList.add('is-active');
+        navToggle.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('nav-open');
+    }
+
+    function closeNav(){
+        nav.classList.remove('is-open');
+        navOverlay.classList.remove('is-open');
+        navToggle.classList.remove('is-active');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-open');
+    }
+
+    navToggle.addEventListener('click', function(){
+        if(nav.classList.contains('is-open')){
+            closeNav();
+        } else {
+            openNav();
+        }
+    });
+
+    navOverlay.addEventListener('click', closeNav);
+
+    nav.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', closeNav);
+    });
+
+    document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') closeNav();
+    });
+
+    window.addEventListener('resize', function(){
+        if(window.innerWidth > 1024) closeNav();
+    });
+})();
+</script>
 
 </body>
 
