@@ -2531,12 +2531,11 @@ font-size:38px;
 
 }
 
-}
 
 /* =========================
    MOBILE V2 OVERRIDE
 ========================= */
-/* @media (max-width:991px){
+@media (max-width:991px){
 
 html,body{overflow-x:hidden;}
 
@@ -2631,11 +2630,11 @@ padding-top:70px;
 padding-bottom:70px;
 }
 
-} */
+}
 
 
 /* ===== MOBILE HOTFIX V6 ===== */
-/* @media (max-width:768px){
+@media (max-width:768px){
 html,body{overflow-x:hidden!important;width:100%!important;max-width:100%!important;}
 *{box-sizing:border-box;}
 body *{max-width:100%;}
@@ -2654,4 +2653,4 @@ img,video{max-width:100%;height:auto;}
 footer .inner,footer .container{
 display:block!important;
 }
-} */
+}
