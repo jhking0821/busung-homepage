@@ -605,16 +605,9 @@ Hero Floating Card
 .why-card{
 
     position:relative;
-
     overflow:hidden;
-
     border-radius:24px;
-
-    background:#fff;
-
-    box-shadow:0 18px 40px rgba(0,0,0,.08);
-
-    transition:.35s;
+    height:270px;
 
 }
 
@@ -630,21 +623,18 @@ Hero Floating Card
 
 .why-thumb{
 
-    position:relative;
-
-    height:240px;
+    position:absolute;
+    inset:0;
 
 }
 
 .why-thumb img{
 
     width:100%;
-
     height:100%;
-
     object-fit:cover;
 
-    filter:brightness(.72);
+    filter:brightness(.82);
 
 }
 
@@ -653,12 +643,9 @@ Hero Floating Card
 .why-thumb::after{
 
     content:"";
-
     position:absolute;
-
     inset:0;
-
-    background:rgba(255,255,255,.35);
+    background:rgba(255,255,255,.45);
 
 }
 
@@ -669,16 +656,17 @@ Hero Floating Card
     position:absolute;
 
     top:18px;
+    right:22px;
 
-    right:20px;
-
-    z-index:3;
+    z-index:5;
 
     color:#1BA97F;
 
+    font-size:16px;
+
     font-weight:700;
 
-    font-size:18px;
+    letter-spacing:1px;
 
 }
 
@@ -688,41 +676,44 @@ Hero Floating Card
 
     position:absolute;
 
-    top:25px;
-
-    left:0;
-
-    width:100%;
+    inset:0;
 
     z-index:5;
 
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
     text-align:center;
 
-    padding:0 25px;
+    padding:30px;
 
 }
 
 .why-content h3{
 
+    margin:0 0 18px;
+
     color:#111;
 
-    font-size:30px;
+    font-size:24px;
 
     font-weight:700;
 
-    margin-bottom:20px;
-
-    line-height:1.3;
+    line-height:1.25;
 
 }
 
+
 .why-content ul{
 
-    list-style:none;
-
     margin:0;
-
     padding:0;
+    list-style:none;
 
 }
 
@@ -730,9 +721,9 @@ Hero Floating Card
 
     color:#333;
 
-    font-size:17px;
+    font-size:16px;
 
-    line-height:1.9;
+    line-height:1.8;
 
 }
 
@@ -740,35 +731,7 @@ Hero Floating Card
 
 .why-icon{
 
-    position:absolute;
-
-    bottom:22px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:68px;
-
-    height:68px;
-
-    border-radius:50%;
-
-    background:#22b07d;
-
-    color:#fff;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:30px;
-
-    z-index:10;
-
-    box-shadow:0 12px 25px rgba(34,176,125,.35);
+    display:none;
 
 }
 
