@@ -2509,7 +2509,7 @@ html,body{overflow-x:hidden;}
 
 .hero{min-height:760px;}
 .hero h1{
-    font-size:2rem;
+    font-size:1.69rem;
     line-height:1.15;
 }
 
@@ -2523,7 +2523,7 @@ html,body{overflow-x:hidden;}
     flex-direction:column;
 }
 
-.hero-floating-card{
+.hero-floating{
     position:relative !important;
     left:auto !important;
     right:auto !important;
