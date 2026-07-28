@@ -1809,9 +1809,7 @@ CONTACT V3
     justify-content:center;
     align-items:center;
 
-    width:100%;
-
-    min-width:0;
+    min-width:240px;
 
     border-radius:60px;
 
