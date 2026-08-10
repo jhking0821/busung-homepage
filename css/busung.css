@@ -2646,3 +2646,447 @@ FOOTER
         font-size:21px;
     }
 }
+
+/* =====================================================
+   BUSUNG AI CHATBOT
+===================================================== */
+
+.busung-ai{
+    position:fixed;
+    right:28px;
+    bottom:28px;
+    z-index:10000;
+    font-family:'Pretendard',sans-serif;
+}
+
+
+/* =========================
+   FLOATING BUTTON
+========================= */
+
+.busung-ai-toggle{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    width:150px;
+    height:58px;
+
+    border:0;
+    border-radius:999px;
+
+    background:#18A77C;
+    color:#fff;
+
+    font-size:16px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.22);
+
+    transition:.3s;
+
+}
+
+.busung-ai-toggle:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.28);
+
+}
+
+.ai-icon{
+
+    font-size:20px;
+
+}
+
+
+/* =========================
+   CHAT WINDOW
+========================= */
+
+.busung-ai-window{
+
+    position:absolute;
+
+    right:0;
+    bottom:72px;
+
+    width:380px;
+    height:560px;
+
+    background:#fff;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.25);
+
+    border:1px solid rgba(11,44,95,.08);
+
+    display:flex;
+    flex-direction:column;
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:
+        translateY(20px)
+        scale(.96);
+
+    transform-origin:bottom right;
+
+    transition:.3s;
+
+}
+
+.busung-ai-window.is-open{
+
+    opacity:1;
+    visibility:visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.busung-ai-header{
+
+    height:76px;
+
+    padding:0 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:#0B2C5F;
+
+    color:#fff;
+
+}
+
+.busung-ai-brand{
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.busung-ai-logo{
+
+    width:40px;
+    height:40px;
+
+    border-radius:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#fff;
+
+    color:#0B2C5F;
+
+    font-size:16px;
+    font-weight:800;
+
+}
+
+.busung-ai-brand strong{
+
+    display:block;
+
+    font-size:15px;
+
+}
+
+.busung-ai-brand span{
+
+    display:block;
+
+    margin-top:2px;
+
+    font-size:11px;
+
+    color:rgba(255,255,255,.7);
+
+}
+
+.busung-ai-close{
+
+    width:36px;
+    height:36px;
+
+    border:0;
+    background:transparent;
+
+    color:#fff;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================
+   MESSAGES
+========================= */
+
+.busung-ai-messages{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:22px 18px;
+
+    background:#f7f9fc;
+
+}
+
+.ai-message{
+
+    display:flex;
+
+    gap:10px;
+
+    align-items:flex-start;
+
+}
+
+.ai-avatar{
+
+    flex:0 0 34px;
+
+    width:34px;
+    height:34px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#0B2C5F;
+
+    color:#fff;
+
+    font-size:11px;
+    font-weight:800;
+
+}
+
+.ai-bubble{
+
+    max-width:285px;
+
+    padding:14px 16px;
+
+    border-radius:
+        4px
+        18px
+        18px
+        18px;
+
+    background:#fff;
+
+    color:#333;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.05);
+
+}
+
+
+/* =========================
+   QUICK BUTTONS
+========================= */
+
+.ai-quick-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    margin:
+        16px
+        0
+        0
+        44px;
+
+}
+
+.ai-quick-buttons button{
+
+    padding:11px 13px;
+
+    border:1px solid #dce3eb;
+
+    border-radius:12px;
+
+    background:#fff;
+
+    color:#0B2C5F;
+
+    text-align:left;
+
+    font-family:inherit;
+
+    font-size:12px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.ai-quick-buttons button:hover{
+
+    border-color:#18A77C;
+
+    color:#18A77C;
+
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.busung-ai-input{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:12px;
+
+    border-top:1px solid #e8edf2;
+
+    background:#fff;
+
+}
+
+.busung-ai-input input{
+
+    flex:1;
+
+    min-width:0;
+
+    height:46px;
+
+    padding:0 15px;
+
+    border:1px solid #e1e6ec;
+
+    border-radius:999px;
+
+    outline:none;
+
+    font-family:inherit;
+
+    font-size:13px;
+
+}
+
+.busung-ai-input input:focus{
+
+    border-color:#18A77C;
+
+}
+
+.busung-ai-input button{
+
+    width:46px;
+    height:46px;
+
+    flex:0 0 46px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#18A77C;
+
+    color:#fff;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:640px){
+
+    .busung-ai{
+
+        right:16px;
+        bottom:16px;
+
+    }
+
+    .busung-ai-toggle{
+
+        width:58px;
+        height:58px;
+
+        padding:0;
+
+        border-radius:50%;
+
+    }
+
+    .busung-ai-toggle .ai-text{
+
+        display:none;
+
+    }
+
+    .busung-ai-window{
+
+        position:fixed;
+
+        left:12px;
+        right:12px;
+
+        bottom:84px;
+
+        width:auto;
+
+        height:min(600px, calc(100dvh - 105px));
+
+        border-radius:22px;
+
+    }
+
+}

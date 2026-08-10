@@ -109,6 +109,105 @@
 lucide.createIcons();
 </script>
 
+<!-- =========================
+     BUSUNG AI CHATBOT
+========================= -->
+
+<div class="busung-ai">
+
+    <button class="busung-ai-toggle" id="busungAiToggle" aria-label="부성 AI 상담">
+        <span class="ai-icon">✦</span>
+        <span class="ai-text">AI 상담</span>
+    </button>
+
+    <div class="busung-ai-window" id="busungAiWindow">
+
+        <div class="busung-ai-header">
+
+            <div class="busung-ai-brand">
+                <div class="busung-ai-logo">BS</div>
+
+                <div>
+                    <strong>부성 F&B AI 상담</strong>
+                    <span>OEM · ODM 상담센터</span>
+                </div>
+            </div>
+
+            <button
+                type="button"
+                class="busung-ai-close"
+                id="busungAiClose"
+                aria-label="챗봇 닫기">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="busung-ai-messages" id="busungAiMessages">
+
+            <div class="ai-message">
+
+                <div class="ai-avatar">BS</div>
+
+                <div class="ai-bubble">
+
+                    안녕하세요 👋<br>
+
+                    <strong>부성 F&B AI 상담원</strong>입니다.
+
+                    <br><br>
+
+                    일반식품·건강기능식품
+                    OEM·ODM에 대해 궁금한 점을
+                    편하게 문의해주세요.
+
+                </div>
+
+            </div>
+
+
+            <div class="ai-quick-buttons">
+
+                <button type="button">
+                    젤리스틱 MOQ가 궁금해요
+                </button>
+
+                <button type="button">
+                    OEM 제작 가능한 제품이 궁금해요
+                </button>
+
+                <button type="button">
+                    개발비와 제작기간이 궁금해요
+                </button>
+
+                <button type="button">
+                    해외 수출용 제품도 가능한가요?
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <form class="busung-ai-input" id="busungAiForm">
+
+            <input
+                type="text"
+                id="busungAiInput"
+                placeholder="궁금한 내용을 입력해주세요."
+                autocomplete="off">
+
+            <button type="submit" aria-label="전송">
+                ➤
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
 <body>
 
 <header class="header">
@@ -1218,7 +1317,7 @@ lucide.createIcons();
 
 <script src="js/process.js"></script>
 <script src="js/kpi.js"></script>
-
+<script src="js/chatbot.js"></script>
 <script>
 (function(){
     const navToggle = document.getElementById('navToggle');
