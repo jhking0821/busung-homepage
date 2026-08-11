@@ -334,6 +334,65 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+    function addFollowUpQuestions(){
+
+        const old =
+            messages.querySelector(".ai-followup");
+
+        if(old){
+            old.remove();
+        }
+
+        const wrap =
+            document.createElement("div");
+
+        wrap.className =
+            "ai-followup";
+
+        wrap.innerHTML = `
+
+            <button type="button">
+                젤리스틱 MOQ가 궁금해요
+            </button>
+
+            <button type="button">
+                OEM 제작 가능한 제품이 궁금해요
+            </button>
+
+            <button type="button">
+                개발비와 제작기간이 궁금해요
+            </button>
+
+            <button type="button">
+                해외 수출용 제품도 가능한가요?
+            </button>
+
+        `;
+
+        wrap
+            .querySelectorAll("button")
+            .forEach(button => {
+
+                button.addEventListener(
+                    "click",
+                    function(){
+
+                        input.value =
+                            this.textContent.trim();
+
+                        form.dispatchEvent(
+                            new Event("submit")
+                        );
+
+                    }
+                );
+
+            });
+
+        messages.appendChild(wrap);
+
+    }
+
 
     console.log("BUSUNG AI CHATBOT: 정상 로드됨");
 

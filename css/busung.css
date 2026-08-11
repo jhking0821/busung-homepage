@@ -3090,3 +3090,41 @@ FOOTER
     }
 
 }
+
+/* =========================
+   AI FOLLOW UP QUESTIONS
+========================= */
+
+.ai-followup{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin:12px 0 4px 38px;
+}
+
+.ai-followup button{
+    width:100%;
+    padding:10px 14px;
+
+    border:1px solid #d9e1ea;
+    border-radius:14px;
+
+    background:#fff;
+    color:#12396b;
+
+    font-size:12px;
+    font-weight:600;
+
+    text-align:left;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease;
+}
+
+.ai-followup button:hover{
+    background:#f2f7fb;
+    border-color:#0b2c5f;
+}

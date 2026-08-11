@@ -156,6 +156,8 @@ export async function onRequestPost(context) {
 - 전문적이지만 이해하기 쉽게 설명합니다.
 - 불필요한 이모지를 남발하지 않습니다.
 - 확인되지 않은 가격이나 MOQ를 임의로 만들지 않습니다.
+- 답변은 일반적으로 4~7문장 이내로 작성합니다.
+- 고객의 질문에 필요한 핵심 정보를 우선적으로 답변하고, 문장을 중간에 생략하거나 끊지 마십시오.
 `;
 
 
@@ -185,7 +187,7 @@ export async function onRequestPost(context) {
 
                     input: message,
 
-                    max_output_tokens: 500
+                    max_output_tokens: 800
 
                 })
             }
