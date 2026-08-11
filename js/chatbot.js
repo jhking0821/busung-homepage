@@ -107,45 +107,201 @@ document.addEventListener("DOMContentLoaded", function(){
             messages.scrollHeight;
 
 
-        /* 임시 응답 */
+        form?.addEventListener("submit", async function(e){
 
-        setTimeout(() => {
+            e.preventDefault();
 
-            const aiMessage =
+            const text = input.value.trim();
+
+            if(!text) return;
+
+
+            // =========================
+            // 사용자 메시지
+            // =========================
+
+            const userMessage =
                 document.createElement("div");
 
-            aiMessage.className =
-                "ai-message";
+            userMessage.className =
+                "ai-message user-message";
 
-            aiMessage.innerHTML = `
+            userMessage.innerHTML = `
+                <div class="ai-bubble">
+                    ${escapeHtml(text)}
+                </div>
+            `;
+
+            messages.appendChild(userMessage);
+
+            input.value = "";
+
+            messages.scrollTop =
+                messages.scrollHeight;
+
+
+            // =========================
+            // 로딩
+            // =========================
+
+            const loadingMessage =
+                document.createElement("div");
+
+            loadingMessage.className =
+                "ai-message ai-loading";
+
+            loadingMessage.innerHTML = `
 
                 <div class="ai-avatar">
                     BS
                 </div>
 
                 <div class="ai-bubble">
-
-                    문의 내용을 확인했습니다.<br><br>
-
-                    현재 AI 상담 시스템을
-                    연결하고 있습니다.
-
-                    <br><br>
-
-                    정확한 견적 및 제작 상담은
-                    <strong>OEM 상담하기</strong>를
-                    이용해주세요.
-
+                    답변을 준비하고 있습니다...
                 </div>
 
             `;
 
-            messages.appendChild(aiMessage);
+            messages.appendChild(loadingMessage);
 
             messages.scrollTop =
                 messages.scrollHeight;
 
-        }, 500);
+
+            try {
+
+                // =========================
+                // Cloudflare Function 호출
+                // =========================
+
+                const response =
+                    await fetch("/chat", {
+
+                        method:"POST",
+
+                        headers:{
+                            "Content-Type":"application/json"
+                        },
+
+                        body:JSON.stringify({
+                            message:text
+                        })
+
+                    });
+
+
+                const data =
+                    await response.json();
+
+
+                loadingMessage.remove();
+
+
+                if(!response.ok){
+
+                    throw new Error(
+                        data.error ||
+                        "AI 서버 오류"
+                    );
+
+                }
+
+
+                // =========================
+                // AI 메시지
+                // =========================
+
+                const aiMessage =
+                    document.createElement("div");
+
+                aiMessage.className =
+                    "ai-message";
+
+                aiMessage.innerHTML = `
+
+                    <div class="ai-avatar">
+                        BS
+                    </div>
+
+                    <div class="ai-bubble">
+                        ${formatAiText(data.answer)}
+                    </div>
+
+                `;
+
+                messages.appendChild(aiMessage);
+
+                messages.scrollTop =
+                    messages.scrollHeight;
+
+
+            } catch(error){
+
+                loadingMessage.remove();
+
+                const errorMessage =
+                    document.createElement("div");
+
+                errorMessage.className =
+                    "ai-message";
+
+                errorMessage.innerHTML = `
+
+                    <div class="ai-avatar">
+                        BS
+                    </div>
+
+                    <div class="ai-bubble">
+
+                        죄송합니다.<br>
+                        AI 상담 연결에 문제가 발생했습니다.
+
+                        <br><br>
+
+                        잠시 후 다시 시도해주세요.
+
+                    </div>
+
+                `;
+
+                messages.appendChild(errorMessage);
+
+                messages.scrollTop =
+                    messages.scrollHeight;
+
+                console.error(error);
+
+            }
+
+        });
+
+
+        /* =========================
+        HTML 안전 처리
+        ========================= */
+
+        function escapeHtml(text){
+
+            const div =
+                document.createElement("div");
+
+            div.textContent = text;
+
+            return div.innerHTML;
+
+        }
+
+
+        /* =========================
+        AI 답변 포맷
+        ========================= */
+
+        function formatAiText(text){
+
+            return escapeHtml(text)
+                .replace(/\n/g,"<br>");
+
+        }
 
     });
 
