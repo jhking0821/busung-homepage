@@ -1,6 +1,6 @@
 const steps=document.querySelectorAll(".step");
 
-const observer=new IntersectionObserver(entries=>{
+const processObserver=new IntersectionObserver(entries=>{
 
     entries.forEach(entry=>{
 
@@ -14,4 +14,4 @@ const observer=new IntersectionObserver(entries=>{
 
 },{threshold:.2});
 
-steps.forEach(step=>observer.observe(step));
+steps.forEach(step=>processObserver.observe(step));
