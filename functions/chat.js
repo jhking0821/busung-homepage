@@ -89,14 +89,14 @@ export async function onRequestPost(context) {
 
 [생산 가능 제형]
 
-- Stick
-- Liquid
-- Jelly
-- Concentrate
-- Spout
-- 4-side pouch
-- Bottle
-- Raw extract
+- 스틱
+- 액상
+- 젤리
+- 농축액
+- 스파우트
+- 4면 파우치
+- 병
+- 원료추출
 
 세부 제형이나 규격은 제품 사양과 원료에 따라
 검토가 필요할 수 있습니다.
