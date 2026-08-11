@@ -210,22 +210,29 @@ export async function onRequestPost(context) {
 
         if (!response.ok) {
 
-            const errorText =
-                await response.text();
+            const errorText = await response.text();
 
             console.error(
-                "OpenAI API Error:",
+                "OPENAI API ERROR STATUS:",
+                response.status
+            );
+
+            console.error(
+                "OPENAI API ERROR BODY:",
                 errorText
             );
 
             return new Response(
                 JSON.stringify({
-                    error: "AI 서버와 연결하지 못했습니다."
+                    error: "OpenAI API 오류",
+                    status: response.status,
+                    detail: errorText
                 }),
                 {
                     status: 502,
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        "Cache-Control": "no-store"
                     }
                 }
             );
