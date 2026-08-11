@@ -1,32 +1,31 @@
-const counters=document.querySelectorAll("[data-count]");
+const counters = document.querySelectorAll("[data-count]");
 
-const observer=new IntersectionObserver(entries=>{
+if (counters.length > 0) {
 
-    entries.forEach(entry=>{
+    const kpiObserver = new IntersectionObserver((entries, observer) => {
 
-        if(entry.isIntersecting){
+        entries.forEach(entry => {
 
-            const el=entry.target;
+            if (!entry.isIntersecting) return;
 
-            const target=+el.dataset.count;
+            const el = entry.target;
+            const target = Number(el.dataset.count);
 
-            let count=0;
+            let count = 0;
+            const speed = target / 80;
 
-            const speed=target/80;
+            const update = () => {
 
-            const update=()=>{
+                count += speed;
 
-                count+=speed;
+                if (count < target) {
 
-                if(count<target){
-
-                    el.innerText=Math.floor(count);
-
+                    el.innerText = Math.floor(count);
                     requestAnimationFrame(update);
 
-                }else{
+                } else {
 
-                    el.innerText=target+"+";
+                    el.innerText = target + "+";
 
                 }
 
@@ -36,10 +35,12 @@ const observer=new IntersectionObserver(entries=>{
 
             observer.unobserve(el);
 
-        }
+        });
 
     });
 
-});
+    counters.forEach(counter => {
+        kpiObserver.observe(counter);
+    });
 
-counters.forEach(c=>observer.observe(c));
+}
