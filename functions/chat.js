@@ -176,7 +176,7 @@ export async function onRequestPost(context) {
 
                     input: message,
 
-                    max_output_tokens: 800
+                    max_output_tokens: 1000
 
                 })
             }
