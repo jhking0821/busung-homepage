@@ -3149,16 +3149,20 @@ FOOTER
 .bsx-text-link span{color:#159e78;font-size:18px;}
 /* 농축 서비스: 기존 남색 그래픽 대신 약재 바구니 사진 표시 */
 .bsx-hero-card{
-    height:280px;
+    width:100%;
+    height:auto;
+    aspect-ratio:16 / 10;
     overflow:hidden;
     border-radius:24px;
     background:#eaeae4;
     box-shadow:0 16px 36px rgba(28,44,42,.10);
+    justify-self:end;
 }
 .bsx-hero-image{
     display:block;
     width:100%;
-    height:100%;
+    height:auto;
+    aspect-ratio:16 / 10;
     object-fit:cover;
     object-position:center center;
     filter:saturate(.82) contrast(1.02);
@@ -3171,7 +3175,7 @@ FOOTER
 @media(max-width:991px){
     .bsx-concentrate{padding:80px 0;}
     .bsx-heading{grid-template-columns:minmax(0,1fr) 240px;gap:24px;}
-    .bsx-hero-card{height:246px;}
+    .bsx-hero-card{width:100%;height:auto;aspect-ratio:16 / 10;}
     .bsx-services{grid-template-columns:repeat(2,minmax(0,1fr));}
 }
 @media(max-width:640px){
@@ -3181,7 +3185,7 @@ FOOTER
     .bsx-heading-copy p{font-size:14px;margin-top:17px;}
     .bsx-desktop-break{display:none;}
     .bsx-eyebrow{font-size:10px;letter-spacing:1.4px;margin-bottom:16px;}
-    .bsx-hero-card{display:block;height:210px;margin-top:24px;border-radius:18px;}
+    .bsx-hero-card{display:block;width:100%;height:auto;aspect-ratio:16 / 10;margin-top:24px;border-radius:18px;}
     .bsx-services{gap:9px;margin:25px 0 0;}
     .bsx-service{padding:16px 14px;border-radius:12px;}
     .bsx-service-no{font-size:10px;margin-bottom:7px;}
